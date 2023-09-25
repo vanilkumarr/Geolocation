@@ -1,0 +1,59 @@
+    {% load static %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>geo location</title>
+        <style>
+            /* Reset some default styles */
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            /* Style the navigation bar */
+            nav {
+                background-color: #333;
+            }
+
+            ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            li {
+                display: inline;
+                margin-right: 20px;
+            }
+
+            a {
+                text-decoration: none;
+                color: white;
+                font-weight: bold;
+            }
+
+            /* Change link color on hover */
+            a:hover {
+                color: #ff6600;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="">Home</a></li>
+            </ul>
+        </nav>
+    <div>
+        <h1 align="center"> Location: {{data.city}}</h1>
+        <h3>_______________Details_______________________<h4>
+        <h3> IP_address :: {{data.ip_address}}</h3>
+        <h3> Regiom ::{{data.region}}</h3>
+        <h3> Country,code ::{{data.country}} ,{{data.country_code}}</h3>
+        <h3> Flag :: <img src="{{ data.flag.png }}" alt="Image" width="20" height="15"></h3>
+        <h3> Time :: {{data.timezone.current_time}} </h3>
+    </div>
+    </body>
+    </html>
